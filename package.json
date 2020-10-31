@@ -1,0 +1,26 @@
+{
+  "name": "hackathon",
+  "version": "1.0.0",
+  "description": "University Information website",
+  "main": "index.js",
+  "scripts": {
+    "scss": "node-sass sass/main.scss css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Missing-Identity/HTF20-Team-02.git"
+  },
+  "author": "Unmilan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Missing-Identity/HTF20-Team-02/issues"
+  },
+  "homepage": "https://github.com/Missing-Identity/HTF20-Team-02#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "concat": "^1.0.3",
+    "node-sass": "^4.14.1",
+    "postcss": "^8.1.4",
+    "postcss-cli": "^8.2.0"
+  }
+}

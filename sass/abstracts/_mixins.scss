@@ -1,0 +1,44 @@
+/*
+0- 600px = Phone
+
+600-900px = Tablet portrait
+
+900-1200px = Tablet Landscape
+
+1200-1800px = Desktops- We currently styled for this
+
+1800+ = Big Screens
+
+$breakpoint arguement choices:
+-phone
+-tab-port
+-tab-land
+-big-desktop
+
+*/
+
+@mixin clearfix {
+    &::after {
+        content: "";//pseudo elements always need a content even if empty.
+        display: table;
+        clear: both;//Clears both float: left and float: right
+    }
+}
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) { @content };
+    }
+
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.25em) { @content };
+    }//Original = 900px
+
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em) { @content };
+    }//Original = 1200px
+
+    @if $breakpoint == big-desktop {
+        @media only screen and (max-width: 112.5em) { @content };
+    }//Original = 1800px
+}

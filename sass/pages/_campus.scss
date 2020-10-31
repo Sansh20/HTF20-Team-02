@@ -1,0 +1,174 @@
+.header-caro{
+    font-size: $default-font-size;
+    height: auto;
+    .carousel-wrapper{
+        height:60vh;
+        position:relative;
+        width:100%;
+        margin:0 auto;
+        display: none;
+    }
+    .carousel-item{
+        position:absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        padding:25px 50px;
+        opacity:0;
+        transition: all 0.5s ease-in-out;
+        text-align: center;
+
+        &__head{
+            margin-top: 18vh;
+            font-size: 8rem;
+            color: $color-white;
+            @supports(-webkit-backdrop-filter: blur(6px)) or (backdrop-filter: blur(6px)) {
+                -webkit-backdrop-filter: blur(6px);
+                backdrop-filter: blur(6px);
+                background-color: rgba($color-black, .3);
+                border-radius: 30px;
+            }
+
+            @include respond(tab-port){
+                margin-top: 20vh;
+                font-size: 6rem;
+            }
+        }
+    }
+    .arrow{
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 12px;
+    }
+      
+    .arrow-prev{
+        position:absolute;
+        top:50%;
+        left: 5%;
+        transform:translateY(-50%) rotate(135deg);
+    }
+       
+    .arrow-next{
+        position:absolute;
+        top:50%;
+        right: 5%;
+        transform:translateY(-50%) rotate(-45deg);
+    }
+      
+    .light{
+        color:white;
+    }
+      
+    @media (max-width: 480px) {
+        .arrow, .light .arrow {
+            background-size: 10px;
+            background-position: 10px 50%;
+        }
+    }
+      
+      /*Select every element*/
+      [id^="item"] {
+          display: none;
+        }
+      
+      .item-1 {
+        z-index: 2;
+        opacity: 1;
+        background:url('https://www.gitam.edu/campus_cms/assets/uploads/slider/1591084273_slider.jpg');
+        background-size:cover;
+        background-position: center;
+      }
+      .item-2{
+        background:url('https://www.gitam.edu/campus_cms/assets/uploads/slider/1571113781_slider.jpg');
+        background-size:cover;
+        background-position: center;
+      }
+      .item-3{
+        background:url('https://images.edexlive.com/uploads/user/imagelibrary/2019/11/12/original/1521705722Apps.jpg');
+        background-size:cover;
+        background-position: center;
+      }
+      
+      *:target ~ .item-1 {
+          opacity: 0;
+        }
+      
+      #item-1:target ~ .item-1 {
+          opacity: 1;
+        }
+      
+      #item-2:target ~ .item-2, #item-3:target ~ .item-3 {
+          z-index: 3;
+          opacity: 1;
+        }
+}      
+
+.search-bar{
+    display: block;
+    animation-name: moveInBottom;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: backwards;
+    margin-top: 20rem;
+    text-align: center;
+
+    @include respond(tab-port){
+        margin-top: 25rem;
+    }
+
+    button{
+        margin-top: 5rem;
+    }
+
+    .cancel-btn{
+        margin-right: 4rem;
+
+        @include respond(tab-port){
+            margin-right: 2rem;
+        }
+
+    }
+
+    .search-uni{
+        width: 70%;
+        height: 6rem;
+        border-radius: 20px;
+        font-size: 5rem;
+        font-family: inherit;
+        color: $color-black;
+        background-color: $color-white;
+        border: none;
+        padding: 2rem 2rem;
+        border: 5px solid transparent;
+        transition: all .3s;
+
+        @include respond(tab-port){
+            border-radius: 10px;
+            font-size: 3rem;
+            height: 4rem;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color-black, .7);
+            border: 5px solid $color-light-green;
+        }
+
+        &:focus:invalid {
+            border-bottom: 5px solid $color-HBC-2;
+        }
+
+    }
+
+}
+
+.section-features {
+    padding: 10rem 0;
+    margin-top: 0;
+
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }
+}

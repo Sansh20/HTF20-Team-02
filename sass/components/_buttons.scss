@@ -1,0 +1,64 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        position: relative;
+        font-size: $default-font-size;
+
+        border: none;
+        cursor: pointer;
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }//Adding scss for after element
+
+    &:hover {
+        transform: translateY(-.2rem);
+        box-shadow: 0 .5rem 1rem rgba($color-black, 0.2);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+
+    &__white {
+        background-color: $color-white;
+        color: $color-black;
+
+        &::after{
+            background-color: $color-white;
+        }
+    }
+
+    &__green {
+        background-color: $color-dark-green;
+        color: $color-white;
+
+        &::after{
+            background-color: $color-dark-green;
+        }
+    }
+
+    &__animated {
+        animation-name: appear;
+        animation-duration: 0.6s;
+        animation-delay: 0.6s;
+        animation-fill-mode: backwards;
+    }
+}

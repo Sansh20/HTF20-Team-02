@@ -1,0 +1,17 @@
+@import "abstracts/mixins";//Importing mixins.
+@import "abstracts/variables";//Importing all variables.
+@import "abstracts/utilities";//IMporting Utilities.
+
+@import "base/animations";//Importing animations.
+@import "base/base";//Importing html base scss.
+@import "base/typography";//Importing Typography scss.
+
+@import "components/buttons";//Importinhg scss for all buttons.
+@import "components/feature-box";//Importing feature scss.
+
+@import "layout/footer";//Importing footer scss.
+@import "layout/grid";//Importing grid layout.
+@import "layout/header";//Importing header scss.
+
+@import "pages/home";//Importing pages.html's scss.
+@import "pages/campus";//Importing campus.html's scss.

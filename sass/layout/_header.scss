@@ -1,0 +1,33 @@
+.header {
+    height: 100vh;
+    background-image: linear-gradient(to right bottom, $color-CBC-1, $color-CBC-2);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+
+    &__text{
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);//Centering element.
+        text-align: center;
+        width: 100%;
+
+        @include respond(tab-port){
+            top: 45%;
+        }
+    }
+
+    &__button{
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+
+        @include respond(tab-port){
+            top: 55%;
+        }
+    }
+}
