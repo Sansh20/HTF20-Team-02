@@ -63,3 +63,4 @@ var CollegeSchema = new Schema({
 })
 
 module.exports = mongoose.model('college', CollegeSchema);
+ 
